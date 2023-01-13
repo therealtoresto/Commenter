@@ -4,6 +4,7 @@ Committer
 ### It is a `Committer` - app for writting comments.
 
 [1.About](#about)
+  - [Stack](#stack)
 
 [2.Quick start](#start)
 
@@ -17,6 +18,20 @@ Users can make a relpy on comment and attach a `image` (<= 320x240) or `text fil
 Text of comment support a tags like: `<a>`,`<code>`, `<strong>`, `<i>`.
 
 Before posting a comment user can open `preview`. 
+
+### <a id="stack"></a> Stack
+
+**Backend:**
+- Node.js
+- GraphQL
+- Prisma
+- Postgres
+- TypeScript
+
+**Frontend:** 
+- React
+- Apollo-Client
+- TypeScript
 
 ## <a id="start"></a> Quick start
 
