@@ -41,6 +41,13 @@ const Query = objectType({
       },
     })
 
+    t.list.field('users', {
+      type: 'User',
+      resolve: (parent, args, context: Context) => {
+        return context.prisma.user.findMany()
+      },
+    })
+
     t.nullable.field('postById', {
       type: 'Post',
       args: {
@@ -247,16 +254,16 @@ const User = objectType({
     t.nonNull.int('id')
     t.string('name')
     t.nonNull.string('email')
-    t.nonNull.list.nonNull.field('posts', {
-      type: 'Post',
-      resolve: (parent, _, context: Context) => {
-        return context.prisma.user
-          .findUnique({
-            where: { id: parent.id || undefined },
-          })
-          .posts()
-      },
-    })
+    // t.nonNull.list.nonNull.field('posts', {
+    //   type: 'Post',
+    //   resolve: (parent, _, context: Context) => {
+    //     return context.prisma.user
+    //       .findUnique({
+    //         where: { id: parent.id || undefined },
+    //       })
+    //       .posts()
+    //   },
+    // })
   },
 })
 

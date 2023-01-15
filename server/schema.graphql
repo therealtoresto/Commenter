@@ -47,6 +47,7 @@ type Query {
   feed(orderBy: PostOrderByUpdatedAtInput, searchString: String, skip: Int, take: Int): [Post!]!
   me: User
   postById(id: Int): Post
+  users: [User]
 }
 
 enum SortOrder {
@@ -58,7 +59,6 @@ type User {
   email: String!
   id: Int!
   name: String
-  posts: [Post!]!
 }
 
 input UserCreateInput {
